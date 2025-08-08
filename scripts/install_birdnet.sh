@@ -31,7 +31,25 @@ install_birdnet() {
   source ./birdnet/bin/activate
   pip3 install wheel
   get_tf_whl
-  pip3 install -U -r ./requirements_custom.txt
+  # pip3 install -U -r ./requirements_custom.txt
+  
+  # Install packages individually to avoid memory issues on Pi 0w2
+  echo "Installing Python packages individually to manage memory usage..."
+  
+  # Read each package and install separately
+  while IFS= read -r package || [[ -n "$package" ]]; do
+      # Skip empty lines and comments
+      if [[ -n "$package" && ! "$package" =~ ^[[:space:]]*# ]]; then
+          echo "Installing: $package"
+          pip3 install -U "$package" --no-cache-dir
+          if [ $? -ne 0 ]; then
+              echo "Failed to install $package"
+              exit 1
+          fi
+      fi
+  done < ./requirements_custom.txt
+  
+  echo "All packages installed successfully"
 }
 
 [ -d ${RECS_DIR} ] || mkdir -p ${RECS_DIR} &> /dev/null
