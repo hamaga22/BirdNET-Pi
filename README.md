@@ -13,6 +13,9 @@ A realtime acoustic bird classification system for the Raspberry Pi 5, 4B, 400, 
 Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 </p>
 
+## About _this_ fork (hamaga22's):
+I made a couple changes to the install script so that the python packages are installed one at a time instead of all at once. This is what enabled me to install BirdNET-Pi on a Raspberry Pi Zero W 2; without the change installation consistently failed due to insufficient RAM, even with a huge swap.
+
 ## About this fork:
 I've been building on [mcguirepr89's](https://github.com/mcguirepr89/BirdNET-Pi) most excellent work to further update and improve BirdNET-Pi. Maybe someone will find it useful.
 
