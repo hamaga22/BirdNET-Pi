@@ -16,6 +16,8 @@ Icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from 
 ## About _this_ fork (hamaga22's):
 I made a couple changes to the install script so that the python packages are installed one at a time instead of all at once. This is what enabled me to install BirdNET-Pi on a Raspberry Pi Zero W 2; without the change installation consistently failed due to insufficient RAM, even with a huge swap.
 
+Running BirdNET-Pi on the 0w2 was okay, but it would fail in one way or another almost daily. I switched to using the 0w2 as an RTSP audio stream only, and running a [BirdNET-Go](https://github.com/tphakala/birdnet-go) container on a separate machine.
+
 ## About this fork:
 I've been building on [mcguirepr89's](https://github.com/mcguirepr89/BirdNET-Pi) most excellent work to further update and improve BirdNET-Pi. Maybe someone will find it useful.
 
